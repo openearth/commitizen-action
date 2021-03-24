@@ -28,6 +28,7 @@ echo "Configuring git user and email..."
 git config --local user.email "action@github.com"
 git config --local user.name "GitHub Action"
 
+if [ $WORKING-DIRECTORY ]; then cd $WORKING-DIRECTORY; fi
 
 echo "Running cz: $INPUT_DRY_RUN $INPUT_CHANGELOG $INPUT_PRERELEASE"
 
