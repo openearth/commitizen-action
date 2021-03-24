@@ -6,6 +6,7 @@ if [ $INPUT_PRERELEASE ]; then INPUT_PRERELEASE="--prerelease $INPUT_PRERELEASE"
 INPUT_BRANCH=${INPUT_BRANCH:-master}
 INPUT_EXTRA_REQUIREMENTS=${INPUT_EXTRA_REQUIREMENTS:-''}
 REPOSITORY=${INPUT_REPOSITORY:-$GITHUB_REPOSITORY}
+INPUT_WORKING_DIRECTORY=${INPUT_WORKING_DIRECTORY:-'.'}
 # : "${INPUT_CHANGELOG:=true}" ignroed for now, let's check that it works
 
 set -e
@@ -28,7 +29,7 @@ echo "Configuring git user and email..."
 git config --local user.email "action@github.com"
 git config --local user.name "GitHub Action"
 
-if [ $INPUT_WORKING-DIRECTORY ]; then cd $INPUT_WORKING-DIRECTORY; fi
+if [ $INPUT_WORKING_DIRECTORY ]; then cd $INPUT_WORKING_DIRECTORY; fi
 
 echo "Running cz: $INPUT_DRY_RUN $INPUT_CHANGELOG $INPUT_PRERELEASE"
 
