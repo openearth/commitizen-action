@@ -7,7 +7,7 @@ branding:
   icon: 'git-commit'
   color: 'purple'
 inputs:
-  working-directory:
+  working_directory:
     description: 'Change to this directory before running'
     required: false
   dry_run:
