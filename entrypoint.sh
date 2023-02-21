@@ -26,6 +26,7 @@ cz version
 
 
 echo "Configuring git user and email..."
+git config --global --add safe.directory "*"
 git config --local user.email "action@github.com"
 git config --local user.name "GitHub Action"
 
